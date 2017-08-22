@@ -1,0 +1,61 @@
+<resources>
+
+
+    <string-array name="timePerDiv">
+        <item>500 ns</item>
+        <item>1 µs</item>
+        <item>2 µs</item>
+        <item>5 µs</item>
+        <item>10 µs</item>
+        <item>20 µs</item>
+        <item>50 µs</item>
+        <item>100 µs</item>
+        <item>200 µs</item>
+        <item>500 µs</item>
+        <item>1 ms</item>
+        <item>2 ms</item>
+        <item>5 ms</item>
+        <item>10 ms</item>
+        <item>20 ms</item>
+        <item>50 ms</item>
+        <item>100 ms</item>
+        <item>200 ms</item>
+        <item>500 ms</item>
+        <item>1 s</item>
+        <item>2 s</item>
+        <item>5 s</item>
+    </string-array>
+
+    <string-array name="voltsPerDiv">
+        <item>100 mV</item>
+        <item>200 mV</item>
+        <item>500 mV</item>
+        <item>1 V</item>
+        <item>2 V</item>
+        <item>5 V</item>
+        <item>10 V</item>
+    </string-array>
+
+    <string-array name="aeroscopeCommands">
+        <item>Command…</item>
+        <item>Stop</item>
+        <item>Run</item>
+        <item>Get 1 Frame/Stop</item>
+        <item>Get Full Frame/Stop</item>
+        <item>Cancel Frame</item>
+        <item>Stop and Cal.</item>
+        <item>Clear Cal. Params</item>
+        <item>Sleep</item>
+        <item>Reset</item>
+        <item>Set Name</item>
+        <item>Full Power</item>
+        <item>FPGA Off</item>
+        <item>Send Telemetry</item>
+        <item>Get Version</item>
+        <item>Fetch Error Log</item>
+        <item>Fetch Cal. Params</item>
+        <item>Fetch Power State</item>
+        <item>Clear Error Log</item>
+    </string-array>
+
+</resources>

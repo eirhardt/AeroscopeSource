@@ -1,0 +1,70 @@
+plugins {
+    // id "me.tatarka.retrolambda" version "3.5.0"  trying it without since RxAndroidBle 1.2.0 is Jack-compatible
+    // see https://github.com/Polidea/RxAndroidBle/issues/125
+} // Don't know if it should be here or perhaps in the Project build.gradle
+// Compiles OK; seems to have to come before most other stuff in the file
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        applicationId 'io.aeroscope.aeroscope'
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 2        // set
+        versionName "0.2"    // set
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        jackOptions {
+            enabled true  // RxAndroidBle 1.2.0 supposed to be OK with Jack (however Jack is now deprecated)
+        } // see plugins above, and https://github.com/evant/gradle-retrolambda
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+    } // default config
+
+    productFlavors {  // added
+        dev {
+            versionName "0.4-dev"
+        }
+        //full {
+        //
+        //}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        // inserted to stop "Method setValue in android.bluetooth.BluetoothGattCharacteristic not mocked" error
+        unitTests.returnDefaultValues = true
+    }
+
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'  // keep updated
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.polidea.rxandroidble:rxandroidble:1.3.2'  // updated from 1.1.0
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'     // updated from 3.0.1
+    compile 'com.polidea.rxandroidble:mockclient:1.1.0'
+    compile 'com.android.support:support-v4:25.3.1'
+    testCompile 'junit:junit:4.12'
+}

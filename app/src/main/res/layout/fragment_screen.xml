@@ -1,0 +1,39 @@
+<!-- FrameLayout is designed to block out an area on the screen to display a single item.
+Generally, FrameLayout should be used to hold a single child view (like chart_id below)
+
+This is inflated & returned to Activity by ScreenFragment's onCreateView()-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="@dimen/fab_margin"
+             tools:context="io.aeroscope.aeroscope.ScreenFragment"> <!-- ScreenFragment.java is the class -->
+
+    <!-- Does this go here? Apparently so -->
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/settings_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:textColor="@color/Yellow"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        android:visibility="visible"/>
+
+</FrameLayout>
+
+<!-- Skeleton created by the "New Fragment" command in AS -->
+
