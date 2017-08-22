@@ -19,15 +19,25 @@ The app is contained in two packages. Package “io.aeroscope.oscilloscope” is
 
 The classes AsChannel, AsTimebase, AsScreen, and AsTrigger are implementations of the oscilloscope interfaces. Additional classes include: 
 •	AeroscopeApp – minimal wrapper that defines the application. 
+
 •	AeroscopeBluetoothService – a background service that handles the Bluetooth connection, employing RxAndroidBLE, an open source Bluetooth package based on reactive programming techniques. 
+
 •	AeroscopeConstants – symbolic definitions of many data items used by the application.
+
 •	AeroscopeDevice – handles a lot of hardware specific details that are not addressed in the generic interfaces.
+
 •	AeroscopeDisplay – the main UI activity that deals with everything except the graph display.
+
 •	AeroscopePreferences – intended to encapsulate user settings and preferences, but not implemented.
+
 •	DataOps – defines several data structures and methods having to do with data manipulation and display. In particular, scaling the data to the graph axes. 
+
 •	HexString – Simple utility class for converting hex values to displayable numbers. 
+
 •	MainActivity – the activity that is started when the app is launched. 
+
 •	RollModeList – container for the values displayed in roll mode.
+
 •	ScreenFragment – the fragment that resides inside of AeroscopeDisplay that handles the visual representation of the Aeroscope data stream (virtual oscilloscope screen). It employs the open source graphing package MPAndroidChart. 
 
 Like most Android apps, the main activity is the first thing that is launched. This is used to scan for and locate any Aeroscope in the vicinity. Once found, tapping the name will launch the AeroscopeDisplay activity, presenting the UI to the user. From there, after a brief connection interval, the user can then operate the Aeroscope. 
